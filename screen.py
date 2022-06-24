@@ -14,6 +14,7 @@ move3 = (305,766,406,779)
 move4 = (517,766,618,779)
 battleTXT = (370,691,426,711)
 aHealth = (340,710,364,724)
+pHealth = (1473,572,1554,593)
 
 # internal use only
 __move1__ = ""
@@ -108,6 +109,11 @@ def getAHealth():
     # Return the result.
     #takeScreenshot().crop(aHealth).save("aHealth.png")
     return pytesseract.image_to_string(takeScreenshot().crop(aHealth), lang='eng', config='--psm 8 --oem 3')
+
+def getPHealth():
+    # Take a screenshot, cop it based on the coordinates, and run pytesseract on it.
+    # Return the result.
+    return pytesseract.image_to_string(takeScreenshot().crop(pHealth), lang='eng', config='--psm 8 --oem 3')
 
 def getBattle():
     # Take a screenshot, cop it based on the coordinates, and run pytesseract on it.
